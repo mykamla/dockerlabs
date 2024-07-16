@@ -2,10 +2,10 @@ source "https://rubygems.org"
 
 gem "rails", "~> 4.2.8"
 gem "sass-rails", ">= 3.2"
-gem "bootstrap-sass", "~> 3.3.4"
+gem "bootstrap-sass", "~> 3.4.1"
 gem "slim"
 gem "pundit"
-gem "sprockets", "~> 2.12.3"
+gem "sprockets", "~> 2.12.5"
 gem "jwt"
 gem "base32"
 gem "active_model_serializers"
@@ -52,7 +52,7 @@ def packaging?
 end
 
 # If the deployment is done through Puma, include it in the bundle.
-gem "puma", "~> 4.3.12" if ENV["PORTUS_PUMA_DEPLOYMENT"] == "yes" || !packaging?
+gem "puma", "~> 5.6.8" if ENV["PORTUS_PUMA_DEPLOYMENT"] == "yes" || !packaging?
 
 # In order to create the Gemfile.lock required for packaging
 # meaning that it should contain only the production packages
@@ -83,7 +83,7 @@ unless packaging?
     gem "wirble"
     gem "factory_girl_rails"
     gem "ffaker"
-    gem "rubocop", "~> 0.41.2", require: false
+    gem "rubocop", "~> 0.49.0", require: false
     gem "brakeman", require: false
     gem "database_cleaner"
     gem "md2man", "~>5.1.1", require: false
